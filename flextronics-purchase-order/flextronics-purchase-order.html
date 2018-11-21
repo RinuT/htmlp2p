@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flextronics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="refresh" content="0">
+</head>
+
+<body >
+    <div ng-app="myApp" ng-controller="flextronics-purchase-orderCtrl" ng-init="onload()">
+<div class="container-fluid"> 
+  
+  <header class="header_bg">
+    <div class="header_left"></div>
+    <div class="header_right"></div>
+    <div class="container">
+      <div class="logo_pharma"> <a href="index.html"><img src="images/logo.png" alt="logo"/></a> </div>
+      <div class="banner_text_right"> Blockchain for Business<br>
+        <b>WITH IBM BLOCKCHAIN</b> </div>
+    </div>
+  </header>
+  <!-- Header Section ends here--> 
+  
+  <!-- Content Section ends here-->
+  <div class="breadcrumb_main">
+    <div class="left"><a href="#"><img src="images/back.png">&nbsp;Home</a></div>
+    <div class="right"><a href="#"><img src="images/sign_out.png">&nbsp;Signout</a></div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="dashboard_drk">
+    <div class="dashboard_drk_left">
+      <h1>Flextronics</h1>
+      <div class="user"><span>Flextronics</span>
+        chief Supplying Officer</div>
+		<ul class="left_menu"><li><a href="/index.html#!/flextronics-purchase-order"><img src="images/icon_9.png">Purchase Order</a></li><li><a href="/index.html#!/invoice"><img src="images/icon_10.png">Invoice</a></li><div class="clearfix"></div></ul>
+      
+      <ul class="left_submenu">
+        <li><a href="/index.html#!/flextronics-notifications"><img src="images/icon_7.png">&nbsp;&nbsp;Notification</a></li>
+        <li><a href="/index.html#!/flextronics-report"><img src="images/icon_8.png">&nbsp;&nbsp;Report</a></li>
+      </ul>
+    </div>
+    <div class="dashboard_drk_right">
+      <div ng-hide="search">
+      <h3>Purchase Order List</h3>
+      <div style="text-align: center" class="alert alert-danger" ng-show="failuer">
+         No data to display
+        </div>
+      <table  id="mytable">
+                  <tr ng-repeat="m in POData" >
+                    <td>  Purchase Order No. : <a href="#">{{m.poNumber}}</a> | PO Date: {{m.poDate}}<span class="status">Status: <span ng-class="{red: m.val==1,green:m.val==0}">{{m.poStatus}}</span> <a href="/index.html#!/flextronics-purchase-order-success" ng-click="submit(m.poNumber)"><img src="images/arrow.png"></a></span></td>
+                  </tr>
+        </table>
+      </div>
+      
+     
+      <div class="clearfix"></div>
+	  
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <!-- Content Section ends here--> 
+
+  </div>
+</div>
+</body>
+</html>

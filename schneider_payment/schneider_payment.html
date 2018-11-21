@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Schneider</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="refresh" content="0">
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="schneider_paymentCtrl" ng-init="onload()">
+<div class="container-fluid"> 
+  
+  <!-- Header Section starts here-->
+  <header class="header_bg">
+    <div class="header_left"></div>
+    <div class="header_right"></div>
+    <div class="container">
+      <div class="logo_pharma"> <a href="index.html"><img src="images/logo.png" alt="logo"/></a> </div>
+      <div class="banner_text_right"> Blockchain for Business<br>
+        <b>WITH IBM BLOCKCHAIN</b> </div>
+    </div>
+  </header>
+  <!-- Header Section ends here--> 
+  
+  <!-- Content Section ends here-->
+  <div class="breadcrumb_main">
+    <div class="left"><a href="#"><img src="images/back.png">&nbsp;Home</a></div>
+    <div class="right"><a href="#"><img src="images/sign_out.png">&nbsp;Signout</a></div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="dashboard">
+    <div class="dashboard_left">
+      <h1>Schneider</h1>
+      <div class="user"><span>Schneider</span>
+        chief Supplying Officer</div>
+      <div class="left_menu">
+        <button class="accordion"><img src="images/icon_1.gif">&nbsp;&nbsp;Create</button>
+        <div class="panel">
+            <ul>
+              <li><a href="/index.html#!/schneider_purchaseOrder">Purchase Order</a></li>
+              <li><a href="/index.html#!/schneider_goodReceipt">Goods Receipt</a></li>
+            </ul>
+          </div>
+          <button class="accordion_1" ng-click="navigate('/index.html#!/schneider_consumption')"><img src="images/icon_2.gif">&nbsp;&nbsp;Consumption</button>
+          <button class="accordion_1" ng-click="navigate('/index.html#!/schneider_payment')"><img src="images/icon_3.gif">&nbsp;&nbsp;Payment</button>
+          <button class="accordion"><img src="images/icon_4.gif">&nbsp;&nbsp;Search</button>
+          <div class="panel">
+            <ul>
+              <li><a href="/index.html#!/schneider_purchaseOrder_search">Purchase Order</a></li>
+              <!-- <li><a href="#">Goods Receipt</a></li> -->
+              <li><a href="/index.html#!/schneider_invoice">Self Invoice</a></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="left_submenu">
+          <li><a href="/index.html#!/schneider_notifications"><img src="images/icon_5.gif">&nbsp;&nbsp;Notification</a></li>
+          <li><a href="/index.html#!/schneider_report"><img src="images/icon_6.gif">&nbsp;&nbsp;Report</a></li>
+        </ul>
+    </div>
+    <div class="dashboard_right">
+        <div class="loader" ng-show="loading" ></div>
+    <div ng-hide="Search">
+    <h3>Payment</h3>
+ 
+     
+      <table>
+              
+        <tr ><span ng-show="Pending">Goods Invoice generated and pending payment with Schnieder</span></tr>
+                <tr ng-repeat="n in PODataPending">
+                  <td>Invoice No. : <a href="#"><span>{{n.invoiceDoc}}</span> </a> Material Code : <a href="#"><span >{{n.materialCode}}</span>  Batch Id:  <span >{{n.batchId}}</span>   </a> Invoice Status : <a href="#"><span >{{n.poStatus}}</span></a>  Per Unit Quantity:  <span >{{n.perUnitPrice}}</span> Consumption Quantity <a href="#"><span>{{n.quantity}}</span></a>
+                    Amount <a href="#"><span>{{n.amount}}</span></a><a href="/index.html#!/schneider_payment_success" ng-click="generateInvoice(n.invoiceDoc)"><img src="images/arrow.png"></a> </td>
+                    </tr>
+                 
+      </table>
+
+       
+
+    </div>
+      <div  ng-show="Search">
+          <div style="text-align: center" class="alert alert-success" ng-show="sucess1">
+              <span ng-bind="transactionId"></span> 
+            </div>
+            <div style="text-align: center" class="alert alert-danger" ng-show="fialuier1">
+                Payment failed
+               </div>
+      <div class="col-md-4">
+        <label>Invoice ID</label>
+        <input type="text" ng-model="invoiceId">
+        <label>Per Unit Price</label>
+        <input type="text" ng-model="perUnitPrice">
+      </div>
+      <div class="col-md-4">
+        <label>PO Number</label>
+        <input type="text" ng-model="poNumber">
+        <label>Amount to be paid</label>
+        <input type="text" ng-model="totalPrice">
+      </div>
+      <div class="col-md-4">
+        <label>SE materialCode</label>
+        <input type="text" ng-model="materialCode">
+        <label>Total Quantity</label>
+        <input type="text" ng-model="quantity">
+      </div>
+      <div class="clearfix"></div>
+    <div class="submit_block"></div>
+    
+<input type="submit" value="Pay" ng-click="generate()">
+  </div>
+  
+      <div style="text-align: center" class="alert alert-success" ng-show="sucess2">
+          Payment successFull:{{transactionId}} 
+        </div>
+        <div style="text-align: center" class="alert alert-danger" ng-show="fialuier3">
+        Payment Failed
+           </div>
+           <div style="text-align: center" class="alert alert-danger" ng-show="display">
+             No data to display
+                 </div>
+           
+  <div class="clearfix"></div>
+<div class="submit_block"></div>
+</div>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</div>
+<!-- Content Section ends here--> 
+
+<!-- Footer Section starts here-->
+<footer class="footer">©  copyright 2018</footer>
+<!-- Footer Section ends here--> 
+
+</body>
+</html>

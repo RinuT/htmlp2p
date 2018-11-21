@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flextronics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="flextronics-purchase-orderCtrl-success"ng-init="onLoadS()">
+<div class="container-fluid"> 
+  
+  <header class="header_bg">
+    <div class="header_left"></div>
+    <div class="header_right"></div>
+    <div class="container">
+      <div class="logo_pharma"> <a href="index.html"><img src="images/logo.png" alt="logo"/></a> </div>
+      <div class="banner_text_right"> Blockchain for Business<br>
+        <b>WITH IBM BLOCKCHAIN</b> </div>
+    </div>
+  </header>
+  <!-- Header Section ends here--> 
+  
+  <!-- Content Section ends here-->
+  <div class="breadcrumb_main">
+    <div class="left"><a href="#"><img src="images/back.png">&nbsp;Home</a></div>
+    <div class="right"><a href="#"><img src="images/sign_out.png">&nbsp;Signout</a></div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="dashboard_drk">
+    <div class="dashboard_drk_left">
+      <h1>Flextronics</h1>
+      <div class="user"><span>Flextronics</span>
+        chief Supplying Officer</div>
+		<ul class="left_menu"><li><a href="/index.html#!/flextronics-purchase-order"><img src="images/icon_9.png">Purchase Order</a></li><li><a href="/index.html#!/invoice"><img src="images/icon_10.png">Invoice</a></li><div class="clearfix"></div></ul>
+      
+      <ul class="left_submenu">
+        <li><a href="/index.html#!/flextronics-notifications"><img src="images/icon_7.png">&nbsp;&nbsp;Notification</a></li>
+        <li><a href="/index.html#!/flextronics-report"><img src="images/icon_8.png">&nbsp;&nbsp;Report</a></li>
+      </ul>
+    </div>
+    <div class="dashboard_drk_right">
+      <div class="loader" ng-show="loading" ></div>
+     
+             <div class="dashboard_drk_right">
+            <h3> Shipment Data</h3>
+            <div style="text-align: center" class="alert alert-success" ng-show="sucess">
+              Purchase oder updated. Blockchain transaction id :  {{transactionId}} 
+              </div>
+              <div style="text-align: center" class="alert alert-danger" ng-show="failuer2">
+                Could not ship data
+              </div>
+            <div class="col-md-4">
+              <label>PO Number</label>
+              <input type="text"  ng-model="PONumber" readonly>
+              <label>PO Qty</label>
+              <input type="text"  ng-model="POQty" readonly>
+              <label>PO Creation Date</label>
+              <input type="date" ng-model="dateC" readonly>
+              <label>Currency</label>
+              <input type="text" ng-model="Currency" readonly>
+              <label>Batch ID</label>
+              <span class="wht"><input type="text" ng-model="BatchId" ></span>
+            </div>
+            
+            <div class="col-md-4">
+              <label>Line No.</label>
+              <input type="text" ng-model="LineNo" readonly>
+              <label>Quantity recieved</label>
+              <span ><input type="text" ng-model="totalRecieved" readonly ></span>
+              <label>UOP</label>
+              <input type="text" ng-model="UOP" readonly>
+              <label>Price</label>
+              <input type="text" ng-model="price" readonly>
+              <label>Shipment Date</label>
+              <span class="wht"><input type="date" ng-model="ShipmentDate"></span>
+              
+            </div>
+            <div class="col-md-4">
+              <label>SE material Code</label>
+              <input type="text" ng-model="SEmaterialCode" readonly>
+              <label>Quantity Required</label>
+              <span ><input type="text" ng-model="requirment" readonly></span>
+              <label>Delivery Date</label>
+              <input type="date" ng-model="dateD" readonly>
+              <label>Shipment Qty</label>
+              <span class="wht"><input type="text" ng-model="shipmentQuantity"></span>
+            </div>
+            <div class="clearfix"></div>
+          <div class="submit_block"></div>
+          
+          <input type="submit" value="SUBMIT" ng-click="proceed()">
+
+      </div>
+     
+      <div class="clearfix"></div>
+	  
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <!-- Content Section ends here--> 
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Schneider</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div ng-app="myApp" ng-controller="schneider_purchaseOrder_searchCtrl">
+<div class="container-fluid"> 
+
+<!-- Header Section starts here-->
+<header class="header_bg">
+  <div class="header_left"></div>
+  <div class="header_right"></div>
+  <div class="container">
+    <div class="logo_pharma"> <a href="index.html"><img src="images/logo.png" alt="logo"/></a> </div>
+    <div class="banner_text_right"> Blockchain for Business<br>
+      <b>WITH IBM BLOCKCHAIN</b> </div>
+  </div>
+</header>
+<!-- Header Section ends here--> 
+
+<!-- Content Section ends here-->
+<div class="breadcrumb_main">
+  <div class="left"><a href="#"><img src="images/back.png">&nbsp;Home</a></div>
+  <div class="right"><a href="#"><img src="images/sign_out.png">&nbsp;Signout</a></div>
+  <div class="clearfix"></div>
+</div>
+<div class="dashboard">
+  <div class="dashboard_left">
+    <h1>Schneider</h1>
+    <div class="user"><span>Schneider</span>
+      chief Supplying Officer</div>
+    <div class="left_menu">
+      <button class="accordion"><img src="images/icon_1.gif">&nbsp;&nbsp;Create</button>
+      <div class="panel">
+          <ul>
+            <li><a href="/index.html#!/schneider_purchaseOrder">Purchase Order</a></li>
+            <li><a href="/index.html#!/schneider_goodReceipt">Goods Receipt</a></li>
+          </ul>
+        </div>
+        <button class="accordion_1" ng-click="navigate('/index.html#!/schneider_consumption')"><img src="images/icon_2.gif">&nbsp;&nbsp;Consumption</button>
+        <button class="accordion_1" ng-click="navigate('/index.html#!/schneider_payment')"><img src="images/icon_3.gif">&nbsp;&nbsp;Payment</button>
+        <button class="accordion"><img src="images/icon_4.gif">&nbsp;&nbsp;Search</button>
+        <div class="panel">
+          <ul>
+            <li><a href="/index.html#!/schneider_purchaseOrder_search">Purchase Order</a></li>
+            <!-- <li><a href="#">Goods Receipt</a></li> -->
+            <li><a href="/index.html#!/schneider_invoice">Self Invoice</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="left_submenu">
+        <li><a href="/index.html#!/schneider_notifications"><img src="images/icon_5.gif">&nbsp;&nbsp;Notification</a></li>
+        <li><a href="/index.html#!/schneider_report"><img src="images/icon_6.gif">&nbsp;&nbsp;Report</a></li>
+      </ul>
+  </div>
+  <div class="dashboard_right">
+      <h3>Purchase Order</h3>
+      <div class="loader" ng-show="loading" ></div>
+      <div ng-hide="search">
+          <div class="col-md-4">
+          <label>PO Number</label>
+          <input type="text" ng-model="PONumber">
+          </div>
+      <div class="clearfix"></div>
+      <div class="submit_block"></div>
+   
+      <input type="submit" value="SUBMIT" ng-click="submit()">
+      </div>
+      <div ng-show="search">
+          <div style="text-align: center" class="No order with this PO" ng-show="failuer">
+              Could not ship data
+            </div>
+        <div class="col-md-4">
+          <label>PO Number</label>
+          <input type="text" ng-model="PONumber">
+          <label>PO Qty</label>
+          <input type="text" ng-model="POQty">
+          <label>Price</label>
+          <input type="text" ng-model="Price">
+          <label>Supplier</label>
+          <input type="text" ng-model="Supplier">
+       
+      </div>
+      <div class="col-md-4">
+        <label>Line No.</label>
+        <input type="text" ng-model="LineNo">
+        <label>UOP</label>
+        <input type="text" ng-model="UOP">
+        <label>Currency</label>
+        <input type="text" ng-model="Currency">
+      </div>
+      <div class="col-md-4">
+        <label>SE material Code</label>
+        <input type="text" ng-model="SEmaterialCode">
+        <label>Delivery Date</label>
+        <input type="date" ng-model="dateD">
+        <label>Creation Date</label>
+        <input type="date" ng-model="dateC">
+      </div>
+      
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<!-- Content Section ends here--> 
+
+<!-- Footer Section starts here-->
+<footer class="footer">©  copyright 2018</footer>
+<!-- Footer Section ends here--> 
+</div>
+
+</div>
+</body>
+</html>
